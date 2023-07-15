@@ -9,28 +9,13 @@
  * 
  */
 
-import 'dart:convert';
 
-import 'package:http/http.dart' as http;
-
-import 'package:dart_package_example/packages.dart' as dart_package_example;
+import 'package:dart_package_example/packages.dart' as packages;
 
 void main(List<String> arguments) {
 
-final url = Uri.parse('https://reqres.in/api/users?page=2');  
- 
-http.get(url).then((res) {
+  // packages.getReqResp_service();
 
-    final body = jsonDecode(res.body);
-
-    print(body);
-
-    print('page: ${ body['page'] }');
-
-    print("per_page: ${ body['per_page'] }");
-
-    print("id tercer elemento: ${ body['data'][2]['id'] }");
-  
-  });
+  packages.getPais();
 
 }
